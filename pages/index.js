@@ -29,7 +29,7 @@ function HomePage(props) {
 // changes data at a set interval
 export async function getStaticProps() {
   //fetch data from an api
-  const client = await MongoClient.connect('mongodb+srv://matthew:ok3asy@cluster0.9u7ql.mongodb.net/meetups?retryWrites=true&w=majority');
+  const client = await MongoClient.connect(process.env.MONGO_LINK);
   const db = client.db();
   const meetupsCollection = db.collection('meetups');
 
